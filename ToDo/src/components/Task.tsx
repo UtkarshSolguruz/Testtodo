@@ -1,6 +1,6 @@
-'use client'
 import { useEffect, useRef, useState } from "react"
 import "./styles.css";
+import Display from "./Display";
 
 
 type TInput = {
@@ -11,7 +11,7 @@ type TInput = {
 
 
 function Task(){
-    const[input, setInput] = useState('');
+    const [input, setInput] = useState('');
     const [form, setForm] = useState(false);
     const [tasks, setTasks] = useState<TInput[]>([])
     const [editIndex, setEditIndex] = useState<number | null>(null);
@@ -84,7 +84,7 @@ function Task(){
             <div className="display">
               <table style={{width:'100%'}}>
                 <tbody id='displayTask'>    
-                  {tasks.map((item,index)=>(
+                  {/* {tasks.map((item,index) => (
                     <tr key={index}>
                         <td>
                           {item.a} 
@@ -93,7 +93,8 @@ function Task(){
                         </td>
                       <td><button id='e-btn' onClick={()=> editTask(index)}>Edit</button><button id='d-btn' onClick={()=>deleteTask(index)}>Delete</button></td>
                     </tr>
-                  ))}
+                  ))} */}
+                  <Display task={tasks} deleteTask={deleteTask} edit={editTask}/>
                 </tbody>
               </table>
             </div>
