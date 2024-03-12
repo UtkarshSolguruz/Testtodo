@@ -13,7 +13,7 @@ type TProps = {
 export default function Display({task, edit, deleteTask}:TProps){
     return(
         <>
-            {task.map((item:TInput,index:number)=>(
+            {task.map((item,index:number)=>(
                     <tr key={index}>
                         <td>
                           {item.a} 
